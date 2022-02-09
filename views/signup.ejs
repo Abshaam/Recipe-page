@@ -1,0 +1,68 @@
+<html lang="en">
+    <!-- head here -->
+    <%- include('./partials/head') %>
+<body>
+    <!-- nav here -->
+  <%- include('./partials/nav') %>
+ 
+
+  <!-- sign up form -->
+  <div class="signup">
+    
+    <form class="signup-form" id="signup-form"  enctype="multipart/form-data">
+        <h3>SIGN UP</h3> 
+        <input type="text" placeholder="Surname & First name" name="name">
+        <input type="text" placeholder="Address" name="address">
+        <input type="text" placeholder="Email" name="email">
+        <input type="text" placeholder="Username" name="userName">
+        <input type="password" placeholder="Password" name="password">
+        <input type="password" placeholder="confirm Password" name="confirmPassword">
+        <input type="file" name="profileImage"  id="fileUpload">
+        <label for="profileImage">Upload profile image here</label>
+     </br>
+        <div class="submit"><input type="submit" value="Submit"> </div>
+
+        <!-- <div class="create"> <button type="submit"> create account </button></div> -->
+        
+
+    </form> 
+</div>
+ 
+<script>
+  const form = document.getElementById('signup-form');
+
+form.addEventListener('submit',async (e) =>{
+  e.preventDefault()
+  const name = form.name.value;
+  const address = form.address.value;
+  const email = form.email.value;
+  const userName = form.userName.value;
+  const password = form.password.value;
+  const confirmPassword = form.confirmPassword.value;
+ 
+  console.log(name, address, email, userName, password, confirmPassword, )
+
+try{
+  const response = await fetch ("/sign-up", {
+    method: "POST",
+    body: JSON.stringify({name, address, email, userName, password, confirmPassword,}),
+  });
+
+  const data = await response.json();
+  console.log(data);
+} catch (error) {
+  console.log(error)
+}
+})
+</script>
+
+
+  
+</body>
+
+
+
+
+
+  <!-- footer here -->
+  <%- include('./partials/footer') %> 

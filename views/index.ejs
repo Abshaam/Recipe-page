@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head') %>
+<body>
+
+    <!-- header -->
+    <header>
+        <%- include('./partials/nav') %>
+
+        
+            <!-- sub nav buttons -->
+            <!-- <div class="sub-nav">
+                <button class="sign-up"> <i>SIGN UP</i> </br> </button> 
+                <button class="sign-in"> <i>SIGN IN</i> </br> </button>
+            </div> -->
+<div class="homepage">
+    <div class="welcome-text">
+        <h1>Welcome to Ushy's recipe hub</h1>
+        <h1>Make your own delicacies</h1>
+    </div>
+</div>
+
+</header>
+
+
+            <!-- Cards -->
+<section class="add">
+    <div>
+        <button><a href="/form">Add Recipe</a></button>
+    </div>
+</section>
+
+<section class="top">
+    <h3 class="top-heading">TOP RECIPES</h3>
+    <div class="cards">
+          
+
+<% if (recipes.length > 0) { %>
+  <% recipes.forEach(post => { %>
+        
+      <div class="card"> 
+          <a href="/get/<%= post._id %> "> 
+  <img class="card-img" src="/upload/image<%= post.image %> " alt="pic">
+  <h2><%= post.name %> </h2>
+  <p><%= post.dish_name %> </p>
+</a>
+</div>
+
+  <% }) %>
+  <% }  else { %>  
+      <p><%= "No posts to display currently" %> </p>
+
+      <% } %>  %>
+
+</div>
+</section>
+              
+
+
+<!-- footer -->
+<%- include('./partials/footer') %>
+
+<!-- <script src='../homepage.js'></script> -->
+    
+</body>
+</html>

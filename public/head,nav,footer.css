@@ -1,0 +1,213 @@
+/* nav */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.logo h1 {
+    font-family: cursive;
+    border-radius: 40%;
+    box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16);
+    background-color: pink;
+    color: white;
+}
+
+.nav-bar{
+    overflow-x: hidden;
+}
+
+nav.sticky{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    min-height: 80;
+    z-index: 2;
+    background-color: palevioletred;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    gap: 2em;
+    /* padding-right: 48em; */
+    padding: 10px;
+    background-color: pink;
+
+}
+.ul-container{
+    border-radius: 20%;  
+    box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16);
+    justify-content: center;
+    
+}
+
+.nav-icons{
+    padding-left: 30px;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    background-color: rgb(219, 201, 201);
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    min-height: 80;
+    z-index: 2;
+}
+
+
+/* dropdown */
+
+/* Category dropdown button */
+/* .category-dropBtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  } */
+  
+  /* Dropdown button on hover & focus */
+  /* .category-dropBtn:hover, .category-dropBtn:focus{
+    background-color: #2980B9;
+  }
+   */
+  /* The container <div> - needed to position the dropdown content */
+  /* .category-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+   */
+  /* Dropdown Content (Hidden by Default) */
+  /* .category-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+   */
+  /* Links inside the dropdown */
+  /* .category-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  } */
+  
+  /* Change color of dropdown links on hover */
+  /* .category-content a:hover {background-color: #ddd}
+   */
+  /* Show the dropdown menu (use JS to add this class to the .category-content container when the user clicks on the dropdown button) */
+  /* .show {display:block;} */
+
+
+
+
+.search{
+    position: relative;
+
+}
+input{
+    width: 10px;
+    height: 30px;
+    padding: 6px;
+    border: none;
+    transition: width 0.35s;
+}
+input:focus{
+    outline: none;
+
+}
+
+.search.active{
+    margin-right: 20px;
+}
+
+.search.active button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+.search.active input{
+    width: 150px;
+}
+.search.active button{
+    transform:translateX(120px)
+}
+.nav-bar a {
+    text-decoration: none;
+    color: rgb(61, 52, 52);
+}
+
+nav ul li a {
+    font-size: 0.9em;
+}
+
+.hamburger{
+    display: none;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 24em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #1570F8;
+}
+
+/* footer */
+footer{
+    background-color: palevioletred;
+    color: #fff;
+    /* align-items: center; */
+    justify-content: center;
+   width: 100%;
+   font-weight: bold;
+   padding: 30px;
+   overflow-x: hidden;
+   text-align: center;
+   align-content: center;
+}
+
+.footer-text{
+    font-size: 1em;
+    /* display: flex; */
+}
+.edition{
+    padding-right: 0.8em;
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+.sub-nav{
+    padding-top: 4em;
+    padding-left: 65em;
+}
+.sub-nav button{
+    border-radius: 5px;
+    padding: 0.3rem;
+    color: white;
+    margin: 0.3em;
+    background-color: rgb(172, 73, 7);
+    width: 40%;
+    border: 2px solid rgb(172, 73, 7) ;
+}
+
+/* this is the hamburger menu which

@@ -1,0 +1,43 @@
+<html lang="en">
+    <!-- head here -->
+    <%- include('./partials/head') %>
+<body>
+    <!-- nav here -->
+  <%- include('./partials/nav') %>
+
+  <section class="category">
+    <!-- sub nav buttons -->
+  <div class="sub-nav">
+    <button class="sign-up"> <a>CATEGORY</a> </br> </button> 
+  </div>
+    <div class="category-cards">
+        <% if(recipes.length > 0){ %> 
+            <% recipes.forEach(post => { %>
+
+
+              <div class="explore-cards">
+
+              <a href="/explore/<%= post._id %> ">
+                <h1><%= post.name %> </h1>
+                <img src= "/upload/image <%= post.image" %>  alt=">
+                <p class="snippet"><%= post.dish_name %> </p>
+
+              </a>
+            </div>
+           <% }) %> 
+        <% } else { %> 
+          <p><%= "No posts to display currently" %> </p>
+        <% } %> %> 
+      </div>
+       
+       
+    
+    </div>
+
+    
+
+  </section> 
+  
+
+  <!-- footer here -->
+  <%- include('./partials/footer') %>

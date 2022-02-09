@@ -1,0 +1,52 @@
+<html lang="en">
+    <!-- head here -->
+    <%- include('./partials/head') %>
+<body>
+    <!-- nav here -->
+  <%- include('./partials/nav') %>
+
+  <!-- sign in form -->
+  <div class="signin">
+    
+    <form class="signin-form" id="login-form">  
+        
+        <h3>SIGN IN</h3>
+        <input type="text" placeholder="Username" name="userName">
+        <input type="password" placeholder="Password" name="password">
+        <div class="submit"><input type="submit" value="Submit"> </div>
+
+
+    </form> 
+</div>
+ 
+<script>
+  const form = document.getElementById('login-form');
+
+form.addEventListener('click', async (e) =>{
+  e.preventDefault()
+  const userName = form.userName.value;
+  const password = form.password.value;
+  console.log(userName, password)
+
+try{
+  const response = await fetch ("/sign-in", {
+    method: "POST",
+    body: JSON.stringify({userName, password}),
+  });
+
+  const data = await response.json();
+  console.log(data);
+} catch (error) {
+  console.log(error)
+}
+})
+</script> 
+
+ 
+
+
+
+  <!-- footer here -->
+  <%- include('./partials/footer') %> 
+  
+</body>

@@ -1,0 +1,43 @@
+<html lang="en">
+    <!-- head here -->
+    <%- include('./partials/head') %>
+<body>
+    <!-- nav here -->
+  <%- include('./partials/nav') %>
+  <section class="explore">
+        <!-- sub nav buttons -->
+
+<div class="create">
+    
+    <form class="create-form" action="/post" enctype="multipart/form-data" method="post">
+
+        <h3>ADD RECIPE</h3>
+        <input type="text" placeholder="Chef name" name="name">
+        <input type="email" placeholder="Email" name="email_address">
+        <input type="text" placeholder="Address" name="address">
+        <input type="text" placeholder="Dish name" name="dish_name">
+        <input type="text" placeholder="Category" name="category">
+        <h3>Ingredients</h3>
+        <textarea name="ingredients" placeholder="Add your ingredients here" id="" cols="30" rows="10"></textarea>
+        <!-- <label for="ingredients">Ingredients</label> </br> -->
+        <h3>Recipe</h3>
+        <textarea name="recipe" placeholder="Add your recipe here" id="" cols="30" rows="10"></textarea>
+        <!-- <textarea name="recipe" placeholder="Add your recipe here"></textarea> -->
+        <!-- <label for="recipe">Recipe</label> </br> -->
+        <input type="file" name="image" id="fileUpload">
+        <label for="image">Upload image of dish here</label> </br>
+        <!-- <input type="file" name="profile-image" id="fileUpload"> -->
+        <!-- <label for="profile-image">Upload a profile image here</label> </br> -->
+        <div class="submit"><input type="submit" value="Submit"> </div>
+        <!-- <button type="submit" value="Submit">Save </button> -->
+        <!-- <button><a href="/explore">View recipes</a> </br></button> -->
+
+
+    </form> 
+</div>
+  </section>
+
+  
+
+  <!-- footer here -->
+  <%- include('./partials/footer') %>

@@ -1,0 +1,29 @@
+
+.success{
+    background-image: url(./images/form.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 90vh;
+}
+
+
+.success-message h2{
+    align-content: center;
+    align-items: center;
+    font-size: 5em;
+    color: white;
+    margin-top: 220px;
+}
+
+.success-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     border-radius: 40%;
+     align-content: center;
+     margin: 70px;  
+     margin-top: 10px;
+
+}

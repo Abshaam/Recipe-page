@@ -1,0 +1,126 @@
+header{
+    background-color: pink;
+}
+
+.homepage {
+    background-image: linear-gradient rgba(0,0,0,0,0.5);
+    background-image: url(./images/ronise.jpg);
+    filter: 10%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 4em auto;
+    width: 90%;
+    min-height: 100vh;
+}
+
+body {
+	font-family: 'Noto Sans', sans-serif;
+}
+.homepage h2, h3, p {
+	font-family: 'Roboto Mono', monospace;
+}
+
+/* welcome */
+.welcome-text{
+    color: coral;
+    margin-left: 2em auto;
+    padding: 8em;
+    font-style: italic;
+}
+
+.top{
+    background-color: pink;
+}
+
+.card {
+    width: 70%;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    margin: 2em;
+    gap: 2em;
+         
+	/* display: grid;
+	grid-template-columns: 50% 50% ; */
+    /* grid-template-rows: 50% 50% 50% 50%; */
+}
+
+.card-img{
+    width:100%;
+    height : 40vh;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16);
+	transition: all ease-in-out .2s;
+}
+
+.card-img:hover {
+	filter: brightness(.75);
+	box-shadow: 0 8px 12px 0 rgba(34, 60, 80, .16);
+}
+
+
+
+.card:hover > h2 {
+	visibility: visible;
+}
+
+.card> h2 {
+	/* position: absolute;
+	top: 50%;
+	left: 50%; */
+    padding: 1em;
+	transform: translate(-50%, -50%);
+	color: white;
+	visibility: hidden;
+	z-index: 2;
+	transition: all ease-in-out .2s;
+}
+
+
+.cards{
+   background-color: white;
+   filter: 10%;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-rows: repeat(4, 1fr); */
+        grid-column-gap: 20px;
+        grid-row-gap: 5px; 
+        
+   /* width: 100%; */
+   margin: 4em auto;
+   width: 90%;
+
+}
+
+.cards .card img{ 
+     width: 100%;
+    text-align: center; 
+}
+
+.add button{
+    border-radius: 40%;
+	box-shadow: 0 8px 12px 0 rgba(34, 60, 80, .16);
+    background-color: pink;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+
+
+}
+
+.top h3{
+    border-radius: 40%;
+	box-shadow: 0 8px 12px 0 rgba(34, 60, 80, .16);
+    background-color: pink;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+}
+    
+
+
+
+

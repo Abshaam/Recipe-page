@@ -1,0 +1,11 @@
+.detail-background {
+    background-image: linear-gradient rgba(0,0,0,0,0.5);
+    filter: 10%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 4em auto;
+    width: 90%;
+    min-height: 100vh;
+}
