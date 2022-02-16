@@ -5,22 +5,23 @@
     <!-- nav here -->
   <%- include('./partials/nav') %>
 
-  <div class="chefs">
+  
       <div class="chef-container">
-        <div class="chef">
-            <img src="./images/Chef.jpg" alt="">  
-          </div>
+        <!-- <div class="chef">
+            <img src="./images/Chef.jpg" alt="">   -->
+        
         <% if (signUps.length > 0) { %>
             <% signUps.forEach(post => { %>
                   
                 <div class="chef-card"> 
                     <a href="/get/<%= post._id %> "> 
-            <img class="card-img" src="/upload/profileImage<%= post.profileImage %> " alt="pic">
+            <img class="cards-img" src="/upload/profileImage<%= post.profileImage %> " alt="pic">
           </a>
-          </div>
           <h2><%= post.name %> </h2>
           <p><%= post.address %> </p>
           <p><%= post.email %> </p>
+          
+          </div>
           
             <% }) %>
             <% }  else { %>  
@@ -29,7 +30,7 @@
                 <% } %>  %>
           
       </div>
-  </div>
+ 
 
   
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const Review = require('../model/review')
-const multer = require('multer')
+
 
 
 
@@ -43,6 +43,7 @@ const getReviewById = (req, res) => {
     Review.findById(req.params.id).then(result => {
         if(result) {
             res.render("detail", {title : "Recipe Details", reviewData: result})
+        
         } 
     }).catch(err => console.log(err))
 }

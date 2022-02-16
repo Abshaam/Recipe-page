@@ -34,6 +34,8 @@ router.get('/', recipeControllers.fetchRecipe)
 //getbyid
 router.get('/get/:id', recipeControllers.getRecipeById)
 
+// getChef
+router.get('/fetch-chef', recipeControllers.fetchChef)
 
 
 

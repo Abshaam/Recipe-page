@@ -32,13 +32,22 @@ const saveRecipe =  (req, res) => {
     }) 
 }
 
+// fetching from the database
+const fetchChef =  (req, res) => {
+    Post.find().then(results => {
+        if(results) {
+            const reversed = results.reverse()
+            res.render("chef", {title : "Chefs", signUps: reversed})
+        } 
+    }).catch(err => console.log(err))
+}
 
 // fetching from the database
 const fetchRecipe =  (req, res) => {
     Post.find().then(results => {
         if(results) {
             const reversed = results.reverse()
-            res.render("index", {title : "HomePage", recipes: reversed})
+            res.render("index", {title : "HomePage", recipe: reversed})
         } 
     }).catch(err => console.log(err))
 }
@@ -59,6 +68,7 @@ module.exports = {
     saveRecipe,
     fetchRecipe,
     getRecipeById,
+    fetchChef,
    
 }
 

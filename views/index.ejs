@@ -5,8 +5,10 @@
 <body>
 
     <!-- header -->
+    <%- include('./partials/nav') %>
+
     <header>
-        <%- include('./partials/nav') %>
+       
 
         
             <!-- sub nav buttons -->
@@ -14,48 +16,57 @@
                 <button class="sign-up"> <i>SIGN UP</i> </br> </button> 
                 <button class="sign-in"> <i>SIGN IN</i> </br> </button>
             </div> -->
-<div class="homepage">
-    <div class="welcome-text">
-        <h1>Welcome to Ushy's recipe hub</h1>
-        <h1>Make your own delicacies</h1>
-    </div>
-</div>
+    
+        <div class="welcome-text">
+            <h1>Hungry!!!</h1>
+            <h2>Checkout amazing recipes</h2>
+        </div>
 
-</header>
+
+
 
 
             <!-- Cards -->
-<section class="add">
-    <div>
-        <button><a href="/form">Add Recipe</a></button>
-    </div>
-</section>
+        <section class="add">
+            <div>
+                <button><a href="/form">Add Recipe</a></button>
+            </div>
+        </section>
 
-<section class="top">
-    <h3 class="top-heading">TOP RECIPES</h3>
-    <div class="cards">
-          
+        <section class="top">
+            <h3 class="top-heading">TOP RECIPES</h3>
+            <div class="cards">
 
-<% if (recipes.length > 0) { %>
-  <% recipes.forEach(post => { %>
-        
-      <div class="card"> 
-          <a href="/get/<%= post._id %> "> 
-  <img class="card-img" src="/upload/image<%= post.image %> " alt="pic">
-  <h2><%= post.name %> </h2>
-  <p><%= post.dish_name %> </p>
-</a>
-</div>
+                
 
-  <% }) %>
-  <% }  else { %>  
-      <p><%= "No posts to display currently" %> </p>
 
-      <% } %>  %>
+                <% if (recipe.length > 0) { %>
+        <% recipe.forEach(post => { %>
+                
+            <div class="card"> 
+                <a href="/get/<%= post._id %> "> 
+        <img class="cards-img" src="/upload/image<%= post.image %> " alt="pic">
 
-</div>
-</section>
-              
+        <div class="textss">
+            <h2><%= post.name %> </h2>
+            <p><%= post.dish_name %> </p>
+        </div>
+       
+        </a>
+        </div>
+
+        <% }) %>
+        <% }  else { %>  
+            <p><%= "No posts to display currently" %> </p>
+
+            <% } %>  %>
+
+        </div>
+        </section>
+
+
+
+    </header>              
 
 
 <!-- footer -->

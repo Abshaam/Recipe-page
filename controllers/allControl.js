@@ -42,16 +42,16 @@ const signing = (req,res) =>{
 }
 
 // adding cookies
-const kookie = (req, res) =>{
-    res.header("Set-Cookie", "isAdmin=false")
-    res.json({message: "cookie set"})
-}
+// const kookie = (req, res) =>{
+//     res.header("Set-Cookie", "isAdmin=false")
+//     res.json({message: "cookie set"})
+// }
 
 // getting cookie
-const getCookie = (req, res) =>{
-    res.cookie('jwt', 'nzxcnsd');
-    res.json({message: "cookie set"})
-}
+// const getCookie = (req, res) =>{
+//     res.cookie('jwt', 'nzxcnsd');
+//     res.json({message: "cookie set"})
+// }
 
 const setCookie = (req, res) =>{
     res.cookie ('jwt', 'wnjmmdnjsw', {maxAge: 3 * 24 * 60 * 60, httpOnly: true});
@@ -70,8 +70,8 @@ module.exports = {
     Success,
     signup,
     signing,
-    kookie,
-    getCookie,
+    // kookie,
+    // getCookie,
     setCookie
 }
 

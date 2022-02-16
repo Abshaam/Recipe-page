@@ -16,7 +16,7 @@
         <input type="text" placeholder="Email" name="email">
         <input type="text" placeholder="Username" name="userName">
         <input type="password" placeholder="Password" name="password">
-        <input type="password" placeholder="confirm Password" name="confirmPassword">
+        <!-- <input type="password" placeholder="confirm Password" name="confirmPassword"> -->
         <input type="file" name="profileImage"  id="fileUpload">
         <label for="profileImage">Upload profile image here</label>
      </br>
@@ -28,7 +28,7 @@
     </form> 
 </div>
  
-<script>
+<!-- <script>
   const form = document.getElementById('signup-form');
 
 form.addEventListener('submit',async (e) =>{
@@ -54,11 +54,11 @@ try{
   console.log(error)
 }
 })
-</script>
+</script> -->
 
 
   
-</body>
+
 
 
 
@@ -66,3 +66,5 @@ try{
 
   <!-- footer here -->
   <%- include('./partials/footer') %> 
+  <script src="../js/signup.js"></script>
+</body>

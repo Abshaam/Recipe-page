@@ -8,56 +8,77 @@
 
 .logo h1 {
     font-family: cursive;
-    border-radius: 40%;
-    box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16);
-    background-color: pink;
+    border-radius: 25%;
+    font-size: 1em;
+    background-color: rgb(192, 45, 45);
     color: white;
+    padding: 5px 12px;
 }
 
-.nav-bar{
-    overflow-x: hidden;
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 15px 14px 0px;
 }
+/* .nav-bar{
+    overflow-x: hidden;
+} */
 
 nav.sticky{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
     position: fixed;
-    min-height: 80;
+    min-height: 70;
     z-index: 2;
-    background-color: palevioletred;
+    background-color: antiquewhite;
+    
 }
 
 nav ul{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     list-style-type: none;
-    gap: 2em;
+    gap: 1.4em;
+    color: white;
     /* padding-right: 48em; */
     padding: 10px;
-    background-color: pink;
-
+    
 }
-.ul-container{
+
+.log button{
+    padding: 5px 12px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(194, 47, 47);
+    color: white;
+    font-size: 1em;
+}
+
+.log button a{
+    color: white;
+}
+/* .ul-container{
     border-radius: 20%;  
     box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16);
     justify-content: center;
     
-}
+} */
 
 .nav-icons{
     padding-left: 30px;
 }
-.nav-bar{
+/* .nav-bar{
     display: flex;
     align-items: center;
-    background-color: rgb(219, 201, 201);
+    color: white;
+    
     justify-content: space-between;
     position: fixed;
     width: 100%;
     min-height: 80;
     z-index: 2;
-}
+} */
 
 
 /* dropdown */
@@ -128,6 +149,8 @@ input:focus{
 
 .search.active{
     margin-right: 20px;
+    box-shadow: 0 8px 12px 0 rgba(34, 60, 80, .16);
+
 }
 
 .search.active button{
@@ -171,8 +194,8 @@ nav ul li a {
 
 /* footer */
 footer{
-    background-color: palevioletred;
-    color: #fff;
+    background-color: antiquewhite;
+    color: rgb(19, 17, 17);
     /* align-items: center; */
     justify-content: center;
    width: 100%;

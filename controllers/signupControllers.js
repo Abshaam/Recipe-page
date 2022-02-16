@@ -49,6 +49,8 @@ const fetchSignup =  (req, res) => {
     }).catch(err => console.log(err))
 }
 
+
+
 module.exports = {
     saveSignup,
     fetchSignup

@@ -14,7 +14,7 @@
     margin: 9em auto;
     padding: 6em;
     width: 30%;
-    min-height: 50vh;
+    min-height: 30vh;
     align-content: center;
     align-items: center;
     border-radius: 10px;
@@ -25,15 +25,15 @@
 
 .signin-form input{
     width: 100%;
-    padding: 0.8rem;
-    margin: 1em 0.4em;
+    padding: 2.8rem;
+    margin: 0.5em 0.4em;
     border-radius: 5px;
     border: none;
     padding: 20px;
 }
 
 .submit input{
-    width: 80%;
+    width: 130%;
     border-radius: 5px;
     margin: 1em 0.4em;
     padding: 5px;
@@ -43,5 +43,5 @@
 
 .signin h3{
     color: white;
-    padding: 8em;
+    padding: 1em;
 }

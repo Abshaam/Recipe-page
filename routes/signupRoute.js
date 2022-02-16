@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require ('multer');
-const signupControllers = require('../controllers/signupControllers');
+const registerControllers = require('../controllers/registerControllers');
 const router = express.Router()
 
 
@@ -26,11 +26,14 @@ const upload = multer({storage})
 
 
 // post request
-router.post('/sign-up', upload.single('profileImage'), signupControllers.saveSignup)
+router.post('/sign-up', upload.single('profileImage'), registerControllers.signup)
 
 // get
-router.get('/fetch-chef', signupControllers.fetchSignup)
+router.get('/fetch-chef', registerControllers.fetchChefs)
 
+// login
+
+router.get('/login', registerControllers.login)
 //getbyid
 // router.get('/get/:id', signupControllers.getSignupById)
 

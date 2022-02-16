@@ -7,7 +7,8 @@ const allRoute = require('./routes/allRouts')
 const recipeRoute = require('./routes/reecipeRoute')
 const signupRoute = require ('./routes/signupRoute')
 const reviewRoute = require ('./routes/reviewRoute')
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const { authUser } = require("./middleware/auth.user");
 
 
 
@@ -45,7 +46,7 @@ app.use(reviewRoute)
 
 
 // serving files with controllers
-app.set('views', path.join(__dirname+'/views/'));
+//app.set('views', path.join(__dirname+'/views/'));
 
 // app.post('/newrec', upload.single('imageUpload'), recipeController.saveRecipe)
 
@@ -54,12 +55,21 @@ const mongoUri =  process.env.MONGO_URI;
 
 
 mongoose.connect(mongoUri, {useNewUrlParser: true,
-    useUnifiedTopology:true}).then(result => {
+    useUnifiedTopology :true}).then(result => {
         console.log('mongodb connected')
     }).catch(err => {
         console.log(err)
     })
 
+
+// app.get('*')
+
+
+
+// using locals
+// app.locals.data = 'login'
+
+// console.log(app.locals)
 
 
 

@@ -6,46 +6,74 @@
   <%- include('./partials/nav') %>
 
   <div class="detail-background">
-    <div class="detail-container">
-        <div class="card">
-               <h1><%= recipeData.dish_name %> </h1>
-               <p><%= recipeData.category %> </p>
-               <div class="ready">
-                   <div class="container">
-                       <img src="./images/Chef.jpg" alt="">
-                   </div>
-               </div>
+    
+    
+               
                <div class="content">
-                   <h2>INGREDIENTS</h2>
-                   <p><%= recipeData.ingredients  %> </p>
-                   <h3>RECIPE</h3>
-                   <p><%= recipeData.recipe %> </p>
                    
-               </div>
-        </div>
+                    <div class="card0"> 
+                        <h1><%= recipeData.dish_name %> </h1>
+                        
+                    <img class="card-img" src="/upload/image<%= recipeData.image %> " alt="pic">
+                    </div>
+
+                    <div class="containers">
+
+                   
+                    <div class="card1">
+                        <h2>INGREDIENTS</h2>
+                          <p><%= recipeData.ingredients  %> </p>
+                   </div>
+
+                    <div class="card2">
+                    <h2>RECIPE</h2>
+                    <p><%= recipeData.recipe %> </p>
+                    </div>
+
+                </div>
+                  
+                     
+           
+                
+              
+                   
+                   
+              
+        
     </div>
    
   
   
     <div class="review">
-      <form class="review-form" action="/review" method="post">
+        <div class="card1">
+            <form class="review-form" action="/review" method="post">
   
-          <h3>REVIEW RECIPE</h3>
-          <textarea name="name" placeholder="Name" id="" cols="30" rows="2"></textarea>
-          <h3>Comment</h3>
-          <textarea name="comment" placeholder="how do you find this recipe?" id="" cols="30" rows="10"></textarea>
-          <h3>Rate us</h3>
-          <div class="rate-recipe">
-              <input id="star" type="radio" class="fa fa star" name="rating" value="1"></input> 
-              <input id="star" type="radio" class="fa fa star" name="rating" value="2"></input> 
-              <input id="star" type="radio" class="fa fa star" name="rating" value="3"></input> 
-              <input id="star" type="radio" class="fa fa star" name="rating" value="4"></input> 
-              <input id="star" type="radio" class="fa fa star" name="rating" value="5"></input> 
-          </div>
-          <button type="submit" value="Submit">Submit</button>
-         
-      </form> 
+                <h3>REVIEW RECIPE</h3>
+                <!-- <text name="name" placeholder="Name" id="" cols="30" rows="2"></text> -->
+                <input class="reviewer-name" type="text" name="name" placeholder="Name">
+                <h3>Comment</h3>
+                <input class="comment" type="text" name="comment" placeholder="how do you find this recipe?">
+                <!-- <text name="comment" placeholder="how do you find this recipe?" id="" cols="30" rows="10"></text> -->
+                <h3>Rate this recipe</h3>
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+                <button class="submit-review" type="submit" value="Submit">Submit</button>
+               
+            </form> 
+        </div>
+      
     </div>
+
+    <!-- reviews -->
+
+   
+</div>
 
    
 
