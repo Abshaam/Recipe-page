@@ -1,36 +1,96 @@
 
-.chefs{
-  background-image: linear-gradient rgba(0,0,0,0,0.5);
-  filter: 10%;
+header{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/doughnuts.jfif);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  margin: 4em auto;
-  width: 90%;
-  min-height: 100vh;
+  margin: 0.7em auto;
+  width: 100%;
+  min-height: 180vh;
 }
 
-.chef-container{
-  grid-template-columns: repeat(2, 1fr);
-        /* grid-template-rows: repeat(4, 1fr); */
-        grid-column-gap: 20px;
-        grid-row-gap: 5px; 
-}
 
 .chef-card {
-    /* border-radius: 50%; */
-    width: 100%;
-    height: 150px;
-    box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16);
-    transition: all ease-in-out .2s;
+  width: 90%;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin: 2em;
+  border-radius: 10px;
+  text-align: center;
+  transition: 1s transform;
+  overflow-y: hidden;
+ 
+      
+}
+  
+  .chef-card:hover {
+    box-shadow: 0 8px 12px 0 rgba(34,60,80,.16);
+    transform: scale(0.9);
+    border-radius: 10px;
   }
 
-/* .chef-card img{
-  height: 10%;
-  width: 10%;
-} */
-  
-  .card:hover {
-    box-shadow: 0 8px 12px 0 rgba(34,60,80,.16);
-  }
+  .chef-card {
+    width: 90%;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    margin: 2em;
+    border-radius: 10px;
+    text-align: center;
+    transition: 1s transform;
+    overflow-y: hidden;
+   
+        
+}
+
+.chef-card-img{
+    width:100%;
+    height : 40vh;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px 0 rgba(34, 60, 80, .16);
+	transition: all ease-in-out .2s;
+    /* overflow-x: hidden; */
+}
+
+.chef-card a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+
+
+.chef-card:hover > h2 {
+	visibility: visible;
+}
+
+.chef-card> h2 {
+    padding: 1em;
+	transform: translate(-50%, -50%);
+	color: black;
+	visibility: hidden;
+	z-index: 2;
+	transition: all ease-in-out .2s;
+}
+
+.chef-card p{
+    color: black;
+}
+
+
+
+.chef-container{
+    background-color: white;
+   filter: 10%;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+   /* grid-template-rows: repeat(4, 1fr); */
+   /* grid-column-gap: 10px; */
+   grid-row-gap: 5px; 
+   margin: 4em auto;
+   width: 90%;
+   padding: 1em;
+
+}

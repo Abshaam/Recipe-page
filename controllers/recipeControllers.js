@@ -42,7 +42,7 @@ const fetchChef =  (req, res) => {
     }).catch(err => console.log(err))
 }
 
-// fetching from the database
+// fetching  recipes from the database
 const fetchRecipe =  (req, res) => {
     Post.find().then(results => {
         if(results) {
@@ -50,6 +50,16 @@ const fetchRecipe =  (req, res) => {
             res.render("index", {title : "HomePage", recipe: reversed})
         } 
     }).catch(err => console.log(err))
+}
+
+// getting all recipes from the database
+const allRecipe = (req, res) =>{
+    Post.find().then(results =>{
+        if(results){
+            const reversed = results.reverse()
+            res.render("allrecipe", {title : "All Recipes", allRecipe: reversed})
+        }
+    })
 }
 
 
@@ -64,11 +74,14 @@ const getRecipeById = (req, res) => {
 }
 
 
+
+
 module.exports = {
     saveRecipe,
     fetchRecipe,
     getRecipeById,
     fetchChef,
+    allRecipe,
    
 }
 

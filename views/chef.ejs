@@ -5,10 +5,8 @@
     <!-- nav here -->
   <%- include('./partials/nav') %>
 
-  
-      <div class="chef-container">
-        <!-- <div class="chef">
-            <img src="./images/Chef.jpg" alt="">   -->
+  <header>
+    <div class="chef-container">
         
         <% if (signUps.length > 0) { %>
             <% signUps.forEach(post => { %>
@@ -33,6 +31,8 @@
  
 
   
+  </header>
+      
 
   <!-- footer here -->
   <%- include('./partials/footer') %>

@@ -20,7 +20,7 @@ const saveReview =  (req, res) => {
     const reviews = new Review (addReview)
     //saving data to the database
     reviews.save().then((results) => {
-        if(results)res.render('success', {title:"Success"})
+        if(results)res.render('detail', {title:"Reviewed recipe page "})
     }).catch((err) =>{
         console.log(err)
     }) 
@@ -31,7 +31,7 @@ const fetchReview =  (req, res) => {
     Review.find().then(results => {
         if(results) {
             const reversed = results.reverse()
-            res.render("detail", {title : "Recipe Details", review: reversed})
+            res.render("detail", {title : "Reviewed recipe page", review: reversed})
         } 
     }).catch(err => console.log(err))
 }

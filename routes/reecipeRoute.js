@@ -37,6 +37,7 @@ router.get('/get/:id', recipeControllers.getRecipeById)
 // getChef
 router.get('/fetch-chef', recipeControllers.fetchChef)
 
-
+// getting all recipes
+router.get('/all-recipe', recipeControllers.allRecipe)
 
 module.exports= router

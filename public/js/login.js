@@ -14,8 +14,8 @@ form.addEventListener("submit", async (e) => {
 
 
   console.log(email,  password)
-//   emailError.textContent = "";
-//   passwordError.textContent = "";
+  // emailError.textContent = "";
+  // passwordError.textContent = "";
 
   try {
     const response = await fetch("/login", {

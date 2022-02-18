@@ -10,31 +10,18 @@
     <header>
         <!-- welcome text -->
         <div class="welcome-text">
-            <h1>Hungry!!!</h1>
-            <h2>Checkout amazing recipes</h2>
+            <h1>All Recipes</h1>
         </div>
 
-
-
-
-
-            <!-- Cards -->
-        <section class="add">
-            <div>
-                <button><a href="/form">Add Recipe</a></button>
-            </div>
-            
-        </section>
-
         <section class="top">
-            <h3 class="top-heading">TOP RECIPES</h3>
+            <!-- <h3 class="top-heading">TOP RECIPES</h3> -->
             <div class="cards">
 
                 
 
 
-                <% if (recipe.length > 0) { %>
-        <% recipe.forEach(post => { %>
+                <% if (allRecipe.length > 0) { %>
+        <% allRecipe.forEach(post => { %>
                 
             <div class="card"> 
                 <a href="/get/<%= post._id %> "> 

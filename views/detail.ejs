@@ -1,87 +1,66 @@
 <html lang="en">
-    <!-- head here -->
-    <%- include('./partials/head') %>
+<!-- head here -->
+<%- include('./partials/head') %>
+
 <body>
     <!-- nav here -->
-  <%- include('./partials/nav') %>
+    <%- include('./partials/nav') %>
 
-  <div class="detail-background">
-    
-    
-               
-               <div class="content">
-                   
-                    <div class="card0"> 
-                        <h1><%= recipeData.dish_name %> </h1>
-                        
-                    <img class="card-img" src="/upload/image<%= recipeData.image %> " alt="pic">
-                    </div>
+    <div class="detail-background">
 
-                    <div class="containers">
 
-                   
-                    <div class="card1">
-                        <h2>INGREDIENTS</h2>
-                          <p><%= recipeData.ingredients  %> </p>
-                   </div>
 
-                    <div class="card2">
+        <div class="content">
+
+            <div class="card0">
+                <h1><%= recipeData.dish_name %> </h1>
+
+                <img class="card-img" src="/upload/image<%= recipeData.image %> " alt="pic">
+            </div>
+
+            <div class="containers">
+
+
+                <div class="card1">
+                    <h2>INGREDIENTS</h2>
+                    <p><%= recipeData.ingredients  %> </p>
+                </div>
+
+                <div class="card2">
                     <h2>RECIPE</h2>
                     <p><%= recipeData.recipe %> </p>
-                    </div>
-
                 </div>
-                  
-                     
-           
-                
-              
-                   
-                   
-              
-        
-    </div>
-   
-  
-  
-    <div class="review">
-        <div class="card1">
-            <form class="review-form" action="/review" method="post">
-  
-                <h3>REVIEW RECIPE</h3>
-                <!-- <text name="name" placeholder="Name" id="" cols="30" rows="2"></text> -->
-                <input class="reviewer-name" type="text" name="name" placeholder="Name">
-                <h3>Comment</h3>
-                <input class="comment" type="text" name="comment" placeholder="how do you find this recipe?">
-                <!-- <text name="comment" placeholder="how do you find this recipe?" id="" cols="30" rows="10"></text> -->
-                <h3>Rate this recipe</h3>
-                <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
-                    <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
-                    </div>
-                  </div>
-                <button class="submit-review" type="submit" value="Submit">Submit</button>
-               
-            </form> 
+
+            </div>
         </div>
-      
-    </div>
 
-    <!-- reviews -->
 
-   
-</div>
 
-   
+        <div class="review">
+            <div class="card1">
+                <form class="review-form" action="/review" method="post">
 
-    
-  
-  </div>
+                    <h3>REVIEW RECIPE</h3>
+                    <!-- <text name="name" placeholder="Name" id="" cols="30" rows="2"></text> -->
+                    <input class="reviewer-name" type="text" name="name" placeholder="Name">
+                    <h3>Comment</h3>
+                    <input class="comment" type="text" name="comment" placeholder="how do you find this recipe?">
+                    <!-- <text name="comment" placeholder="how do you find this recipe?" id="" cols="30" rows="10"></text> -->
+                    <h3>Rate this recipe</h3>
 
-  
-   
-  <!-- footer here -->
-  <%- include('./partials/footer') %> 
+                    <select class="rate-dropdown" name="rating" id="">
+                        <option value="1">1 star</option>
+                        <option value="2">2 star</option>
+                        <option value="3">3 star</option>
+                        <option value="4">4 star</option>
+                        <option value="5">5 star</option>
+                    </select> </br>
+                    <button class="submit-review" type="submit" value="Submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+
+
+        <!-- footer here -->
+        <%- include('./partials/footer') %>

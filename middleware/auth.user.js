@@ -1,11 +1,11 @@
 const jwt = require("jsonwebtoken");
 const User = require('../model/register')
 
-module.exports.authUser = (req, res, next) =>{
+const authUser = (req, res, next) =>{
     const token = req.cookies.jwt;
 
     if(token){
-        jwt.verify(token, process.env.JWT_SECRET, (err, decoded) =>{
+        jwt.verify(token, process.env.privateKey, (err, decoded) =>{
             if(err) {
                 console.log(err)
                 res.redirect('/login')
@@ -20,22 +20,31 @@ module.exports.authUser = (req, res, next) =>{
 }
 
 // Authenticate user 
-module.exports.getUser = (requests, response, next) =>{
+const getUser = (req, res, next) =>{
     const token = req.cookies.jwt;
 
     if(token){
-        jwt.verify(token, process.env.JWT_SECRET, async(err, decoded) =>{
+        jwt.verify(token, process.env.privateKey, async(err, decoded) =>{
             if(err){
                 console.log(err);
-                response.locals.user = null;
+                res.locals.user = null;
                 next();
             }else{
                 console.log(decoded)
                const user = await User.findById(decoded.id);
-               response.locals.user = user
+               res.locals.user = user
                next();
             }
         })
+    }else{
+        res.locals.err = null
+        next()
     }
 
+}
+
+module.exports ={
+    getUser,
+    authUser
+    
 }

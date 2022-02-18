@@ -8,7 +8,15 @@
     <%- include('./partials/nav') %>
 
     <header>
-        <!-- welcome text -->
+       
+
+        
+            <!-- sub nav buttons -->
+            <!-- <div class="sub-nav">
+                <button class="sign-up"> <i>SIGN UP</i> </br> </button> 
+                <button class="sign-in"> <i>SIGN IN</i> </br> </button>
+            </div> -->
+    
         <div class="welcome-text">
             <h1>Hungry!!!</h1>
             <h2>Checkout amazing recipes</h2>
@@ -19,22 +27,21 @@
 
 
             <!-- Cards -->
-        <section class="add">
+        <!-- <section class="add">
             <div>
                 <button><a href="/form">Add Recipe</a></button>
             </div>
-            
-        </section>
+        </section> -->
 
         <section class="top">
-            <h3 class="top-heading">TOP RECIPES</h3>
+            <h3 class="top-heading">SEARCH RESULTS</h3>
             <div class="cards">
 
                 
 
 
-                <% if (recipe.length > 0) { %>
-        <% recipe.forEach(post => { %>
+                <% if (recipes.length > 0) { %>
+        <% recipes.forEach(post => { %>
                 
             <div class="card"> 
                 <a href="/get/<%= post._id %> "> 

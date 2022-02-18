@@ -11,7 +11,7 @@ const saveSignup = async (req, res) => {
     //destructuring the objects in the model
 
     console.log(req.file)
-    const{name, address, email, userName, password } = req.body;
+    const{name, address, email, username, password } = req.body;
         //declaring a variable to pass the object
 
     try {
@@ -24,7 +24,7 @@ const saveSignup = async (req, res) => {
         name,
 		address,
         email,
-        userName,
+        username,
         password: hashedPassword,
         profileImage: req.file.originalname
       }) ;

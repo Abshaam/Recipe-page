@@ -13,17 +13,17 @@ form.addEventListener("submit", async (e) => {
   const username = form.username.value;
   const address = form.address.value;
   const password = form.password.value;
-  const profileImage = form.profileImage.value;
+  
 
 
-  console.log(email, name, username, address, password, profileImage)
-//   emailError.textContent = "";
-//   passwordError.textContent = "";
+  console.log(email, name, username, address, password)
+  // emailError.textContent = "";
+  // passwordError.textContent = "";
 
   try {
-    const response = await fetch("/signUp", {
+    const response = await fetch("/sign-up", {
       method: "POST",
-      body: JSON.stringify({ name, username, address, email, password, profileImage }),
+      body: JSON.stringify({ name, username, address, email, password}),
       headers: { "Content-Type": "application/json"}
     });
 
@@ -31,13 +31,13 @@ form.addEventListener("submit", async (e) => {
     console.log(data);
 
     // if(data.errors) {
-        // emailError.textContent = data.errors.email;
-        // passwordError.textContent = data.errors.password;
-    //}
+    //     emailError.textContent = data.errors.email;
+    //     passwordError.textContent = data.errors.password;
+    // }
 
-    if(data.user) {
+    if(data.User) 
         location.assign('/')
-    }
+    
     
   } catch (error) {
     console.log(error)

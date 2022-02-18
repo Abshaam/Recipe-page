@@ -233,4 +233,7 @@ ul{
     border: 2px solid rgb(172, 73, 7) ;
 }
 
-/* this is the hamburger menu which
+.user{
+    list-style-type: none;
+
+}

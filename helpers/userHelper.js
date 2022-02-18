@@ -27,6 +27,6 @@ module.exports.handleErrors = (err) => {
 // generating token
 module.exports.generateToken = (id) => {
     return jwt.sign({id}, process.env.privateKey, {
-        expiresIn: 3 * 24 * 60 * 60 * 1000
+        expiresIn: 1 * 24 * 60 * 60 * 1000
     })
 }

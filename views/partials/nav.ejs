@@ -12,18 +12,40 @@
             <li><a href="/">HOME</a></li>
             <li><a href="/fetch-chef">CHEFS</a></li>
             <li> <a href="/categories">CATEGORIES</a></li>
+            <li> <a href="/all-recipe">All RECIPES</a></li>
            
         </ul>
     
     
 
     <div class="search active">
-        <input type="text" placeholder="search a recipe">
-        <button><i class="fa fa-search"></i></button>
+        <input id="search-input" type="text" placeholder="search a recipe">
+        <button id="search-button" ><i class="fa fa-search"></i></button>
     </div>
 
-    <div class="log">
+        <% if (user){ %> 
+            <div class="user">
+                <li>Welcome <%= user.username %> </li>
+            </div>
+
+            <div class="log">
+                <button><a href="/logout">LOG OUT</a></button>
+            </div>
+
+            <% }else { %> 
         <button><a href="/sign-in">SIGN IN</a></button>
         <button><a href="/sign-up">SIGN UP</a></button>
-    </div>
+        <% } %> 
+       
+   
 </nav>
+
+<script>
+    const searchInput = document.querySelector('#search-input');
+    const searchButton = document.querySelector('#search-button');
+
+    searchButton.addEventListener('click', () =>{
+        const value = searchInput.value
+        window.location.href = `http://localhost:7000/search?search=${value}`;
+    })
+</script>

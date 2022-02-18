@@ -31,8 +31,7 @@ const userSchema = new Schema({
     },
 
     profileImage: {
-        type: String,
-        required: true
+        type: String
     }
 
 

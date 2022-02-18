@@ -11,7 +11,7 @@ const signup = async (req, res) =>{
     const{firstName, lastName, username, password, email, address} = req.body
 
 try {
-    const newUser = new register ({firstName, lastName, username, password, email, address, profileImage: req.file.originalname})
+    const newUser = new register ({firstName, lastName, username, password, email, address})
     
 
     const User = await newUser.save()
@@ -21,7 +21,7 @@ try {
         const token = generateToken(User._id)
 
         // set cookies
-        res.cookie('jwt', token, {maxAge: 3 * 24 * 60, httpOnly:true})
+        res.cookie('jwt', token, {maxAge: 1 * 24 * 60 * 60 *1000, httpOnly:true})
 
         // send our data
         res.status(201).json({User})
@@ -57,7 +57,7 @@ const login = async (req, res) => {
                 const token = generateToken(user._id)
 
                 // set cookies
-                res.cookie('jwt', token, {maxAge: 3 * 24 * 60, httpOnly: true})
+                res.cookie('jwt', token, {maxAge: 3 * 24 * 60* 60 * 1000, httpOnly: true})
 
                 res.status(201).json({user})
             }else{
@@ -84,10 +84,28 @@ const fetchChefs =  (req, res) => {
     }).catch(err => console.log(err))
 }
 
+// fetch signup chef by id
+const getChefById = (req, res) => {
+    register.findById(req.params.id).then(result => {
+        if(result) {
+            res.render("chef", {title : "Chef", Cook: result})
+        } 
+    }).catch(err => console.log(err))
+}
+
+// logout
+const logout = (req, res) =>{
+    res.cookie('jwt', 0, {maxAge: 0, httpOnly:true})
+    res.redirect('/sign-in')
+    next()
+
+}
 
 
 module.exports ={
     signup,
     login,
-    fetchChefs
+    fetchChefs,
+    logout,
+    getChefById
 }

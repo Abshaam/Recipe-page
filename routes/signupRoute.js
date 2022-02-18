@@ -26,18 +26,19 @@ const upload = multer({storage})
 
 
 // post request
-router.post('/sign-up', upload.single('profileImage'), registerControllers.signup)
+router.post('/sign-up',  registerControllers.signup)
 
 // get
 router.get('/fetch-chef', registerControllers.fetchChefs)
 
 // login
 
-router.get('/login', registerControllers.login)
+router.post('/login', registerControllers.login)
+
 //getbyid
-// router.get('/get/:id', signupControllers.getSignupById)
+router.get('/get/:id', registerControllers.getChefById)
 
-
+router.get('/logout',registerControllers.logout)
 
 
 module.exports= router

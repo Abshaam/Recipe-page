@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan")
 const dotenv = require("dotenv").config()
-const path = require ('path')
+// const path = require ('path')
 const allRoute = require('./routes/allRouts')
 const recipeRoute = require('./routes/reecipeRoute')
 const signupRoute = require ('./routes/signupRoute')
@@ -38,12 +38,17 @@ app.use(morgan('dev'));
 app.use(cookieParser())
 
 
-// endpoint for user
+// global for user
 app.use(allRoute)
 app.use(recipeRoute)
 app.use(signupRoute)
 app.use(reviewRoute)
 
+
+// using 404 page
+// app.use((req, res) => {
+//     res.render('404')
+// })
 
 // serving files with controllers
 //app.set('views', path.join(__dirname+'/views/'));

@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser')
+const Post = require('../model/user')
 
 
 // getting the create page
@@ -54,9 +55,30 @@ const signing = (req,res) =>{
 // }
 
 const setCookie = (req, res) =>{
-    res.cookie ('jwt', 'wnjmmdnjsw', {maxAge: 3 * 24 * 60 * 60, httpOnly: true});
+    res.cookie ('jwt', 'wnjmmdnjsw', {maxAge: 3 * 24 * 60 * 60 * 1000, httpOnly: true});
 
     res.json({message: "cookie set"})
+}
+
+const notFound = (req,res) =>{
+    res.render('notFound')
+}
+
+const searchRecipe = (req, res) =>{
+
+    Post.find().exec().then(results =>{
+        console.log(results)
+
+        if(Object.keys(req.query).length) {
+            const render = results.filter(result=> result.dish_name.includes(req.query.search) || 
+            result.name.includes(req.query.search))
+            if(render.length) {
+               
+                
+                res.render("search", {title : "Search result", recipes:render})
+            }else (res.render('notFound', { title: "Not found"}))
+        } 
+    })
 }
 
 
@@ -72,7 +94,9 @@ module.exports = {
     signing,
     // kookie,
     // getCookie,
-    setCookie
+    setCookie,
+    searchRecipe,
+    notFound
 }
 
 
